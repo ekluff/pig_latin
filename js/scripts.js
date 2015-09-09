@@ -1,7 +1,7 @@
 var pigLatin  = function (word) {
   var result = [];
-  result = word.split('');
-  return result
+  return result = word.split('');
+
 
 
 };
