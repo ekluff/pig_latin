@@ -11,6 +11,9 @@ describe('pigLatin', function() {
     expect(pigLatin('quiet')).to.eql('ietquay');
   });
 
+  it('translates an entire sentence into pig latin', function() {
+    expect(pigLatin('hello world')).to.eql('ellohay orldway');
+  });
 });
 
 

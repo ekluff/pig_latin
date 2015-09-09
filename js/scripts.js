@@ -23,18 +23,22 @@ var pigLatin  = function (word) {
   };
 
   var ordway = splitWordSlice.join('');
-  return ordway;
-
+  return ordway;g
 };
 
 
 $(document).ready(function() {
-  $("form#translate_word").submit(function(event) {
+  $("form#ormfay").submit(function(event) {
     var input = $("input#word").val();
-    var result = pigLatin(word);
+    var ordway = pigLatin(input);
 
-    $(".result").text(result);
-    $(".result").show();
+    $("#title").text("Igpay Atinlay Anslatortray");
+    $("#label").text("Anslatetray aay ordway intoay igpay atinlay.");
+    $("#button").text("Anslatetray!");
+
+    $("#ordway").text(ordway);
+    alert(ordway);
+    $("#ordway").show();
     event.preventDefault();
   });
 });
