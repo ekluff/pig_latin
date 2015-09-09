@@ -4,18 +4,29 @@ var pigLatin  = function (word) {
   var splitWordSlice = splitWord.slice();
 
   var vowels = ['a', 'e', 'i', 'o', 'u'];
-
+  var consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'qu', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
   i = null;
-  for (i=0; i<vowels.length; i++) {
-    if (splitWord[0] === vowels[i]) {
-      splitWordSlice.push('a', 'y')
+
+  if (vowels.indexOf(splitWordSlice[0]) >= 0) {
+    splitWordSlice.push('a', 'y');
+    // can this be combined with next else if with || logic
+  } else {
+    if ((splitWordSlice[0]) + (splitWordSlice[1]) === 'qu') {
+      splitWordSlice.push(splitWordSlice.shift(), splitWordSlice.shift())
+    } else {
+      while (consonants.indexOf(splitWordSlice[0]) >= 0) {
+        splitWordSlice.push(splitWordSlice.shift());
+      };
     };
+    splitWordSlice.push('a', 'y');
+
   };
 
   var ordway = splitWordSlice.join('');
   return ordway;
 
 };
+
 
 $(document).ready(function() {
   $("form#translate_word").submit(function(event) {
